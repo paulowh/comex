@@ -1,12 +1,12 @@
 package br.com.alura.comex;
 
 public class Pedido {
-    private int id;
+    private long id;
     private Cliente cliente;
     private double preco;
     private int quantidade;
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -50,7 +50,7 @@ public class Pedido {
         return this.preco * this.quantidade;
     }
 
-    public Pedido(int id, Cliente cliente, double preco, int quantidade) {
+    public Pedido(Cliente cliente, double preco, int quantidade) {
         this.id = id;
         this.cliente = cliente;
         this.preco = preco;
