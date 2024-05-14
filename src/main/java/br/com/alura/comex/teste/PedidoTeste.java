@@ -1,8 +1,11 @@
-package br.com.alura.comex;
+package br.com.alura.comex.teste;
 
-public class ClienteTeste {
-    public static void main(String[] args) {
+import br.com.alura.comex.Cliente;
+import br.com.alura.comex.Endereco;
+import br.com.alura.comex.Pedido;
 
+public class PedidoTeste {
+    public static void main(String[] args){
         Endereco endereco = new Endereco(
                 "Vila São Pedro",
                 "Americana",
@@ -22,6 +25,15 @@ public class ClienteTeste {
                 "docente TI"
         );
 
-        System.out.println(cliente);
+        Pedido pedido = new Pedido(
+                cliente,
+                1999.00,
+                12
+        );
+
+        System.out.println(pedido);
+
+        double total = pedido.getValorTotal();
+        System.out.println(total);
     }
 }

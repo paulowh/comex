@@ -1,6 +1,8 @@
-package br.com.alura.comex;
+package br.com.alura.comex.teste;
 
-public class ProdutoTest {
+import br.com.alura.comex.Produto;
+
+public class ProdutoTeste {
     public static void main(String[] args) {
         System.out.println("==PRODUTO==");
 

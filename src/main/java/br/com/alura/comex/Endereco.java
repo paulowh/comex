@@ -1,79 +1,98 @@
 package br.com.alura.comex;
 
+import jdk.jfr.Enabled;
+
+import javax.persistence.Column;
+import javax.persistence.Embeddable;
+import javax.persistence.Entity;
+
+@Embeddable
 public class Endereco {
-    private String Bairro;
-    private String Cidade;
-    private String Complemento;
-    private String Estado;
-    private String Rua;
-    private int Numero;
+    @Column(length = 50)
+    private String bairro;
+    @Column(length = 50)
+    private String cidade;
+    @Column(length = 50)
+    private String complemento;
+    @Column(length = 50)
+    private String estado;
+    @Column(length = 50)
+    private String rua;
+    @Column(length = 50)
+    private int numero;
+
+    public Endereco(String bairro, String cidade, String complemento, String estado, String rua, int numero) {
+        this.bairro = bairro;
+        this.cidade = cidade;
+        this.complemento = complemento;
+        this.estado = estado;
+        this.rua = rua;
+        this.numero = numero;
+    }
+
+    /* @hibernate only */
+    public Endereco() {
+
+    }
 
     public String getBairro() {
-        return Bairro;
+        return bairro;
     }
 
     public void setBairro(String bairro) {
-        Bairro = bairro;
+        this.bairro = bairro;
     }
 
     public String getCidade() {
-        return Cidade;
+        return cidade;
     }
 
     public void setCidade(String cidade) {
-        Cidade = cidade;
+        this.cidade = cidade;
     }
 
     public String getComplemento() {
-        return Complemento;
+        return complemento;
     }
 
     public void setComplemento(String complemento) {
-        Complemento = complemento;
+        this.complemento = complemento;
     }
 
     public String getEstado() {
-        return Estado;
+        return estado;
     }
 
     public void setEstado(String estado) {
-        Estado = estado;
+        this.estado = estado;
     }
 
     public String getRua() {
-        return Rua;
+        return rua;
     }
 
     public void setRua(String rua) {
-        Rua = rua;
+        this.rua = rua;
     }
 
     public int getNumero() {
-        return Numero;
+        return numero;
     }
 
     public void setNumero(int numero) {
-        Numero = numero;
+        this.numero = numero;
     }
 
-    public Endereco(String bairro, String cidade, String complemento, String estado, String rua, int numero) {
-        Bairro = bairro;
-        Cidade = cidade;
-        Complemento = complemento;
-        Estado = estado;
-        Rua = rua;
-        Numero = numero;
-    }
 
     @Override
     public String toString() {
         return "Endereco{" +
-                "Bairro='" + Bairro + '\'' +
-                ", Cidade='" + Cidade + '\'' +
-                ", Complemento='" + Complemento + '\'' +
-                ", Estado='" + Estado + '\'' +
-                ", Rua='" + Rua + '\'' +
-                ", Numero=" + Numero +
+                "bairro='" + bairro + '\'' +
+                ", cidade='" + cidade + '\'' +
+                ", complemento='" + complemento + '\'' +
+                ", estado='" + estado + '\'' +
+                ", rua='" + rua + '\'' +
+                ", numero=" + numero +
                 '}';
     }
 }
