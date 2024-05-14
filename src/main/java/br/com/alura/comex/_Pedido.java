@@ -3,7 +3,8 @@ package br.com.alura.comex;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Pedido {
+//arquivo anterior com o mesmo nome do card 0606
+public class _Pedido {
 
     private String categoria;
     private String produto;
@@ -14,7 +15,7 @@ public class Pedido {
 
     private LocalDate data;
 
-    public Pedido(String categoria, String produto, String cliente, BigDecimal preco, int quantidade, LocalDate data) {
+    public _Pedido(String categoria, String produto, String cliente, BigDecimal preco, int quantidade, LocalDate data) {
         this.categoria = categoria;
         this.produto = produto;
         this.cliente = cliente;
