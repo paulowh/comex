@@ -1,6 +1,6 @@
 package br.com.alura.comex.teste;
 
-import br.com.alura.comex.Produto;
+import br.com.alura.comex.model.Produto;
 
 public class ProdutoTeste {
     public static void main(String[] args) {

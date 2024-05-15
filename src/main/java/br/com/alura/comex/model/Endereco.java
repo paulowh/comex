@@ -1,10 +1,7 @@
-package br.com.alura.comex;
-
-import jdk.jfr.Enabled;
+package br.com.alura.comex.model;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
-import javax.persistence.Entity;
 
 @Embeddable
 public class Endereco {
