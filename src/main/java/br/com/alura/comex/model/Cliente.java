@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Cliente {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
+    @Column(name = "id_cliente")
     private Long id;
     @Column(name = "nome", length = 120, nullable = false)
     private String nome;
@@ -39,6 +39,19 @@ public class Cliente {
 
 
     public Cliente() {
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", nome='" + nome + '\'' +
+                ", cpf='" + cpf + '\'' +
+                ", telefone='" + telefone + '\'' +
+                ", email='" + email + '\'' +
+                ", profissao='" + profissao + '\'' +
+                ", endereco=" + endereco +
+                '}';
     }
 
     public Long getId() {
@@ -98,8 +111,5 @@ public class Cliente {
     }
 
 
-    @Override
-    public String toString() {
-        return "Cliente{" + "nome='" + nome + '\'' + ", cpf='" + cpf + '\'' + ", telefone='" + telefone + '\'' + ", email='" + email + '\'' + ", endereco=" + endereco + ", profissao='" + profissao + '\'' + '}';
-    }
+
 }

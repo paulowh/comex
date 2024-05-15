@@ -8,9 +8,10 @@ import java.math.BigDecimal;
 public class ItemPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_itemPedido")
     private long id;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id", nullable = false )
+    @JoinColumn(name = "id_pedido", nullable = false )
     private Pedido pedido;
     @Column(name = "preco_unitario", nullable = false)
     private BigDecimal precoUnitario;
@@ -18,7 +19,7 @@ public class ItemPedido {
     private int quantidade;
     @Column(name = "desconto", nullable = false)
     private BigDecimal desconto;
-    @Column(name = "desconto", nullable = false)
+    @Column(name = "tipo_desconto", nullable = false)
     @Enumerated(EnumType.STRING)
     private TipoDescontoProdutoEnum tipoDesconto = TipoDescontoProdutoEnum.NENHUM;
 

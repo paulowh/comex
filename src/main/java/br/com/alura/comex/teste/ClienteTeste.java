@@ -4,6 +4,8 @@ import br.com.alura.comex.model.Cliente;
 import br.com.alura.comex.model.Endereco;
 import br.com.alura.comex.dao.ClienteDao;
 
+import java.util.List;
+
 public class ClienteTeste {
     public static void main(String[] args) {
 
@@ -30,6 +32,9 @@ public class ClienteTeste {
 
         ClienteDao clienteDao = new ClienteDao();
         clienteDao.salvar(paulin);
+        List<Cliente> cliente = ClienteDao.listarTodos();
+
+        System.out.println(cliente);
 
     }
 }

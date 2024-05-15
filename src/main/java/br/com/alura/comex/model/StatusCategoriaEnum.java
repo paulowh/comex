@@ -4,7 +4,6 @@ import oracle.sql.BOOLEAN;
 
 public enum StatusCategoriaEnum {
     ATIVO(Boolean.TRUE),
-
     INATIVO(Boolean.FALSE);
 
     private Boolean status;

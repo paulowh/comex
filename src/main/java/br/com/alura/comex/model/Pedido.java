@@ -7,19 +7,19 @@ import javax.persistence.*;
 public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id", nullable = false)
+    @Column(name = "id_pedido", nullable = false)
     private long id;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id", nullable = false )
+    @JoinColumn(name = "id_cliente", nullable = false )
     private Cliente cliente;
     @Column(name = "preco", nullable = false)
     private double preco;
     @Column(name = "quantidade", nullable = false)
     private int quantidade;
 
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id")
-    private ItemPedido item;
+//    @ManyToOne(fetch = FetchType.EAGER)
+//    @JoinColumn(name = "id")
+//    private ItemPedido item;
 
     @Column(name = "desconto", nullable = false)
     @Enumerated(EnumType.STRING)

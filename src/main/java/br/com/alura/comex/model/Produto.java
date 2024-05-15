@@ -7,7 +7,7 @@ import javax.persistence.*;
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "nome")
+    @Column(name = "id_produto")
     private long id;
     @Column(name = "nome", length = 100, nullable = false)
     private String nome;
@@ -18,7 +18,7 @@ public class Produto {
     @Column(name = "quantidade", nullable = false)
     private int quantidade;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id", nullable = false )
+    @JoinColumn(name = "id_categoria", nullable = false )
     private Categoria categoria;
 
     public Produto() {
