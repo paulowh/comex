@@ -1,10 +1,45 @@
 package br.com.alura.comex.model;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "tb_produto")
 public class Produto {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "nome")
+    private long id;
+    @Column(name = "nome", length = 100, nullable = false)
     private String nome;
+    @Column(name = "descricao", length = 200, nullable = true)
     private String descricao;
+    @Column(name = "preco", nullable = false)
     private double preco;
+    @Column(name = "quantidade", nullable = false)
     private int quantidade;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id", nullable = false )
+    private Categoria categoria;
+
+    public Produto() {
+    }
+
+    public Produto(String nome, String descricao, double preco, int quantidade) {
+        this.nome = nome;
+        this.descricao = descricao;
+        this.preco = preco;
+        this.quantidade = quantidade;
+    }
+
+    @Override
+    public String toString() {
+        return "Produto{" +
+                "nome='" + nome + '\'' +
+                ", descricao='" + descricao + '\'' +
+                ", preço=" + preco +
+                ", quantidade=" + quantidade +
+                '}';
+    }
 
     public String getNome() {
         return nome;
@@ -38,20 +73,4 @@ public class Produto {
         this.quantidade = quantidade;
     }
 
-    public Produto(String nome, String descricao, double preco, int quantidade) {
-        this.nome = nome;
-        this.descricao = descricao;
-        this.preco = preco;
-        this.quantidade = quantidade;
-    }
-
-    @Override
-    public String toString() {
-        return "Produto{" +
-                "nome='" + nome + '\'' +
-                ", descricao='" + descricao + '\'' +
-                ", preço=" + preco +
-                ", quantidade=" + quantidade +
-                '}';
-    }
 }
