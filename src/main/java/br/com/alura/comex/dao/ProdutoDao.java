@@ -4,11 +4,12 @@ import br.com.alura.comex.model.Categoria;
 import br.com.alura.comex.model.Produto;
 import br.com.alura.comex.util.JPAUltil;
 
-import javax.persistence.EntityManager;
+//import javax.persistence.EntityManager;
+import jakarta.persistence.*;
 import java.util.List;
 
 public class ProdutoDao {
-    public static void cadastrar(Produto produto) {
+    public void cadastrar(Produto produto) {
         EntityManager manager = new JPAUltil().getEntityManager();
         manager.getTransaction().begin();
         manager.persist(produto);

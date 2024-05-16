@@ -24,8 +24,9 @@ public class ProdutoTeste {
         System.out.println(resultado);
 
         ProdutoDao produtoDao = new ProdutoDao();
-        //ProdutoDao.cadastrar(produto03);
-        List<Object[]> relatorio = produtoDao.listarRelatorioQntdProdutos();
-        System.out.println(Arrays.toString(relatorio.toArray()));
+        produtoDao.cadastrar(produto01);
+        produtoDao.cadastrar(produto02);
+        produtoDao.cadastrar(produto03);
+
     }
 }

@@ -3,8 +3,10 @@ package br.com.alura.comex.dao;
 import br.com.alura.comex.model.Categoria;
 import br.com.alura.comex.util.JPAUltil;
 
-import javax.persistence.EntityManager;
+//import javax.persistence.EntityManager;
 import java.util.List;
+
+import jakarta.persistence.*;
 
 public class CategoriaDao {
     public void cadastrar(Categoria categoria) {
