@@ -22,7 +22,6 @@ public class CategoriaController {
         if (result.hasFieldErrors()) return ResponseEntity.badRequest().build();
 
         categoriaService.cadastro(form.toEntity());
-        System.out.println("Funfou!!!");
         return ResponseEntity.ok().build();
 
     }
