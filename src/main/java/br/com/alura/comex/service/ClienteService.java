@@ -2,10 +2,13 @@ package br.com.alura.comex.service;
 
 import br.com.alura.comex.model.Cliente;
 import br.com.alura.comex.repository.ClienteRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import java.util.List;
 
 public class ClienteService {
+
+    @Autowired
     ClienteRepository repository;
 
     public void cadastra(Cliente novoCliente) {
@@ -19,11 +22,10 @@ public class ClienteService {
     public List<Cliente> listaTodos() {
         return repository.findAll();
     }
-
-    public List<Cliente> listaTodosOrdemAlfabetica(String nome) {
-        return repository.listaPorOrdemAlfabetica();
-    }
-    public Cliente buscaClientePorNomeECpf(String nome, String cpf) {
-        return repository.findClienteByNomeByCpf(nome, cpf);
-    }
+//    public List<Cliente> listaTodosPorOrdemAlfabetica() {
+//        return repository.listaPorOrdemAlfabetica();
+//    }
+//    public Cliente buscaClientePorNomeECpf(String nome, String cpf) {
+//        return repository.findClienteByNomeByCpf(nome, cpf);
+//    }
 }
