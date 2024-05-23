@@ -5,7 +5,7 @@ import org.hibernate.validator.constraints.Length;
 
 import java.util.Optional;
 
-public record DadosNovoProduto(@Length(min = 5) String nomeProduto, double preco, @Min(1) int quantidade,
+public record DadosNovoProduto(@Length(min = 5) String nomeProduto, double preco, @Length(min = 1) int quantidade,
                                Long idCategoria) {
 
     public Produto toEntity(Categoria categoria) {
