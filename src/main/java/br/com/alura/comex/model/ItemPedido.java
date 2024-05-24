@@ -9,7 +9,7 @@ public class ItemPedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_itemPedido")
-    private long id;
+    private Long id;
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "id_pedido", nullable = false )
     private Pedido pedido;

@@ -8,9 +8,9 @@ public class Pedido {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_pedido", nullable = false)
-    private long id;
+    private Long id;
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "id_cliente", nullable = false )
+    @JoinColumn(name = "id_cliente", nullable = false)
     private Cliente cliente;
     @Column(name = "preco", nullable = false)
     private double preco;
@@ -46,11 +46,11 @@ public class Pedido {
                 '}';
     }
 
-    public long getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

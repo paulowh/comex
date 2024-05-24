@@ -6,6 +6,8 @@ import br.com.alura.comex.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+
 @Service
 public class ProdutoService {
     @Autowired
@@ -13,7 +15,8 @@ public class ProdutoService {
 
     public void cadastro(Produto novoProduto) {
         if (novoProduto == null) return;
-        if (novoProduto.getNome().isEmpty() || novoProduto.getPreco() < 0.0 || novoProduto.getQuantidade() < 0) return;
+        if (novoProduto.getNome().isEmpty() || novoProduto.getPreco().compareTo(new BigDecimal("0.0")) == 1 || novoProduto.getQuantidade() < 0)
+            return;
         if (novoProduto.getCategoria() == null) return;
 
         repository.save(novoProduto);

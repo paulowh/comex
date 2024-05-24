@@ -20,7 +20,7 @@ public class ProdutoController {
     @Autowired
     private CategoriaService categoriaService;
 
-    @PostMapping("api/produto")
+    @PostMapping("/api/produto")
     public ResponseEntity cadastra(@RequestBody DadosNovoProduto form, BindingResult result) {
 
         if (result.hasFieldErrors()) return ResponseEntity.badRequest().build();
@@ -43,7 +43,7 @@ public class ProdutoController {
         return ResponseEntity.notFound().build();
     }
 
-    @RequestMapping("/api/produtos")
+    @PostMapping("/api/produtos")
     public ResponseEntity<Object> listarTodos(){
 
         Iterable<Produto> produtos = produtoService.buscarAll();
