@@ -26,11 +26,12 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(String nome, BigDecimal preco, int quantidade, Categoria categoria) {
+    public Produto(String nome, BigDecimal preco, int quantidade, Categoria categoria, String descricao) {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
         this.categoria = categoria;
+        this.descricao = !descricao.isEmpty() ? descricao : null;
     }
 
     @Override
