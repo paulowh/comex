@@ -2,7 +2,6 @@ package br.com.alura.comex.teste;
 
 import br.com.alura.comex.model.Cliente;
 import br.com.alura.comex.model.Endereco;
-import br.com.alura.comex.dao.ClienteDao;
 
 import java.util.List;
 
@@ -30,11 +29,6 @@ public class ClienteTeste {
 
         System.out.println(paulin);
 
-        ClienteDao clienteDao = new ClienteDao();
-        clienteDao.salvar(paulin);
-        List<Cliente> cliente = ClienteDao.listarTodos();
-
-        System.out.println(cliente);
 
     }
 }

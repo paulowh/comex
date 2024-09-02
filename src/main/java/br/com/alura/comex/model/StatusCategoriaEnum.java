@@ -1,6 +1,5 @@
 package br.com.alura.comex.model;
 
-import oracle.sql.BOOLEAN;
 
 public enum StatusCategoriaEnum {
     ATIVO(Boolean.TRUE),

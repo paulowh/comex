@@ -6,27 +6,28 @@ import br.com.alura.comex.repository.ProdutoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.List;
+
 @Service
 public class ProdutoService {
     @Autowired
-    ProdutoRepository repository ;
+    ProdutoRepository repository;
 
-    public void cadastro(Produto novoProduto){
-        if (novoProduto == null) return;
-        if (novoProduto.getNome().isEmpty() || novoProduto.getPreco() < 0.0 || novoProduto.getQuantidade() < 0) return;
-        if (novoProduto.getCategoria() == null) return;
+    public void cadastro(Produto novoProduto) {
+
 
         repository.save(novoProduto);
 
     }
 
-    public Produto buscarById(Long produtoId){
+    public Produto buscarById(Long produtoId) {
         return repository.findById(produtoId).orElseThrow(
-                ()  -> new ProdutoNotFoundException("Produto não encontrado para o ID: " + produtoId)
-        ) ;
+                () -> new ProdutoNotFoundException("Produto não encontrado para o ID: " + produtoId)
+        );
     }
 
-    public Iterable<Produto> buscarAll() {
+    public List<Produto> buscarAll() {
         return repository.findAll();
     }
 }

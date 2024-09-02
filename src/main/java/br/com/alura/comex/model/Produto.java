@@ -2,19 +2,21 @@ package br.com.alura.comex.model;
 
 import jakarta.persistence.*;
 
+import java.math.BigDecimal;
+
 @Entity
 @Table(name = "tb_produto")
 public class Produto {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_produto")
-    private long id;
+    private Long id;
     @Column(name = "nome", length = 100, nullable = false)
     private String nome;
     @Column(name = "descricao", length = 200, nullable = true)
     private String descricao;
     @Column(name = "preco", nullable = false)
-    private double preco;
+    private BigDecimal preco;
     @Column(name = "quantidade", nullable = false)
     private int quantidade;
     @ManyToOne(fetch = FetchType.EAGER)
@@ -24,11 +26,12 @@ public class Produto {
     public Produto() {
     }
 
-    public Produto(String nome, double preco, int quantidade, Categoria categoria) {
+    public Produto(String nome, BigDecimal preco, int quantidade, Categoria categoria, String descricao) {
         this.nome = nome;
         this.preco = preco;
         this.quantidade = quantidade;
         this.categoria = categoria;
+        this.descricao = !descricao.isEmpty() ? descricao : null;
     }
 
     @Override
@@ -43,6 +46,14 @@ public class Produto {
 
     public Categoria getCategoria() {
         return categoria;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -61,11 +72,11 @@ public class Produto {
         this.descricao = descricao;
     }
 
-    public double getPreco() {
+    public BigDecimal getPreco() {
         return preco;
     }
 
-    public void setPreco(double preco) {
+    public void setPreco(BigDecimal preco) {
         this.preco = preco;
     }
 
