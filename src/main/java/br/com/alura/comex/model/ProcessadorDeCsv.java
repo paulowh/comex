@@ -1,14 +1,5 @@
-package br.com.alura.comex;
+package br.com.alura.comex.model;
 
-import java.io.IOException;
-import java.math.BigDecimal;
-import java.net.URISyntaxException;
-import java.net.URL;
-import java.nio.file.Path;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.Arrays;
-import java.util.Scanner;
 //arquvio que usava a referencia da class Pedido anterior
 public class ProcessadorDeCsv {
 

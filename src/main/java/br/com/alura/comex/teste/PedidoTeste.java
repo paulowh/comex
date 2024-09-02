@@ -1,4 +1,8 @@
-package br.com.alura.comex;
+package br.com.alura.comex.teste;
+
+import br.com.alura.comex.model.Cliente;
+import br.com.alura.comex.model.Endereco;
+import br.com.alura.comex.model.Pedido;
 
 public class PedidoTeste {
     public static void main(String[] args){
