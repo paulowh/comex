@@ -1,62 +1,70 @@
 package br.com.alura.comex;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
-
 public class Pedido {
-
-    private String categoria;
-    private String produto;
-    private String cliente;
-
-    private BigDecimal preco;
+    private long id;
+    private Cliente cliente;
+    private double preco;
     private int quantidade;
 
-    private LocalDate data;
-
-    public Pedido(String categoria, String produto, String cliente, BigDecimal preco, int quantidade, LocalDate data) {
-        this.categoria = categoria;
-        this.produto = produto;
-        this.cliente = cliente;
-        this.preco = preco;
-        this.quantidade = quantidade;
-        this.data = data;
+    public long getId() {
+        return id;
     }
 
-    public String getCategoria() {
-        return categoria;
+    public void setId(int id) {
+        this.id = id;
     }
 
-    public String getProduto() {
-        return produto;
-    }
-
-    public String getCliente() {
+    public Cliente getCliente() {
         return cliente;
     }
 
-    public BigDecimal getPreco() {
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
+
+    public double getPreco() {
         return preco;
+    }
+
+    public void setPreco(double preco) {
+        this.preco = preco;
     }
 
     public int getQuantidade() {
         return quantidade;
     }
 
-    public LocalDate getData() {
-        return data;
+    public void setQuantidade(int quantidade) {
+        this.quantidade = quantidade;
+    }
+
+    public boolean isMaisBaratoQue(Pedido outroPedido) {
+        return this.preco < outroPedido.preco;
+    }
+
+    public boolean isMaisCaroQue(Pedido outroPedido) {
+        return this.preco > outroPedido.preco;
+    }
+
+    public Double getValorTotal() {
+        return this.preco * this.quantidade;
+    }
+
+    public Pedido(Cliente cliente, double preco, int quantidade) {
+        this.id = id;
+        this.cliente = cliente;
+        this.preco = preco;
+        this.quantidade = quantidade;
     }
 
     @Override
     public String toString() {
         return "Pedido{" +
-                "categoria='" + categoria + '\'' +
-                ", produto='" + produto + '\'' +
-                ", cliente='" + cliente + '\'' +
+                "id=" + id +
+                ", cliente=" + cliente +
                 ", preco=" + preco +
                 ", quantidade=" + quantidade +
-                ", data=" + data +
+                ", valorTotal=" + this.getValorTotal() +
                 '}';
     }
-
 }
