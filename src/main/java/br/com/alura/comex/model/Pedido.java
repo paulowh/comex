@@ -17,9 +17,9 @@ public class Pedido {
     @Column(name = "quantidade", nullable = false)
     private int quantidade;
 
-//    @ManyToOne(fetch = FetchType.EAGER)
-//    @JoinColumn(name = "id")
-//    private ItemPedido item;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "id")
+    private ItemPedido item;
 
     @Column(name = "desconto", nullable = false)
     @Enumerated(EnumType.STRING)
