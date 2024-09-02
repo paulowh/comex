@@ -1,13 +1,10 @@
 # Comex
-
-## Informações gerais dos pedidos em _pedidos.csv_
-- Campos: **CATEGORIA, PRODUTO, PREÇO, QUANTIDADE, DATA, CLIENTE**
+> Projeto desenvolvido junto a equipe *Alura*
 
 
-### RELATÓRIO DE VALORES TOTAIS
-- TOTAL DE PEDIDOS REALIZADOS: 16
-- TOTAL DE PRODUTOS VENDIDOS: 35
-- TOTAL DE CATEGORIAS: 5
-- MONTANTE DE VENDAS: R$ 178.374,49
-- PEDIDO MAIS BARATO: R$ 95,17 (Clean Code)
-- PEDIDO MAIS CARO: R$ 55.056,00 (iPhone 13 Pro)
+## Informações 
+- Foi utilizado no projeto ferramentas para controle de rotas e gerenciamento de banco de dados
+
+## Frameworks Utilizados
+- Spring
+- Migrate
