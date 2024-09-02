@@ -1,7 +1,6 @@
 package br.com.alura.comex.model;
 
-import javax.persistence.Column;
-import javax.persistence.Embeddable;
+import jakarta.persistence.*;
 
 @Embeddable
 public class Endereco {

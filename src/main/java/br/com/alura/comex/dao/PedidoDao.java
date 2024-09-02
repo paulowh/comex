@@ -4,7 +4,8 @@ package br.com.alura.comex.dao;
 import br.com.alura.comex.model.Pedido;
 import br.com.alura.comex.util.JPAUltil;
 
-import javax.persistence.EntityManager;
+//import javax.persistence.EntityManager;
+import jakarta.persistence.*;
 import java.util.List;
 
 public class PedidoDao {

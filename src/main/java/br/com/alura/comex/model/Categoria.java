@@ -1,6 +1,6 @@
 package br.com.alura.comex.model;
 
-import javax.persistence.*;
+import jakarta.persistence.*;
 
 @Entity
 @Table(name = "tb_categoria")
@@ -13,14 +13,13 @@ public class Categoria {
     private String nome;
     @Column(name = "status", nullable = false)
     @Enumerated(EnumType.STRING)
-    private StatusCategoriaEnum status;
+    private StatusCategoriaEnum status = StatusCategoriaEnum.ATIVO;
 
     public Categoria() {
     }
 
-    public Categoria(String nome, StatusCategoriaEnum status) {
+    public Categoria(String nome) {
         this.nome = nome;
-        this.status = status;
     }
 
     @Override
